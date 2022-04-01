@@ -15,7 +15,7 @@ buildwin: clean
 	GOOS=windows go build \
 				-o ${APP}.exe \
                 -ldflags "-s -w \
-				-X  ${PROJECT}/internal/app/config.Release=${RELEASE} \
+				-X ${PROJECT}/internal/app/config.Release=${RELEASE} \
                 -X ${PROJECT}/internal/app/config.Commit=${COMMIT} \
 				-X ${PROJECT}/internal/app/config.BuildTime=${BUILD_TIME}" \
                 cmd/${APP}/main.go
@@ -26,7 +26,7 @@ buildlinux:	clean
 	GOOS=linux go build \
 				-o ${APP} \
                 -ldflags "-s -w \
-				-X  ${PROJECT}/internal/app/config.Release=${RELEASE} \
+				-X ${PROJECT}/internal/app/config.Release=${RELEASE} \
                 -X ${PROJECT}/internal/app/config.Commit=${COMMIT} \
 				-X ${PROJECT}/internal/app/config.BuildTime=${BUILD_TIME}" \
 				cmd/${APP}/main.go
